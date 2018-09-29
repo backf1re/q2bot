@@ -2,6 +2,13 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var exec = require('child_process').execFile;
+var runq2 =function(){
+             exec('"D:\games\q2pro-server\q2proded.exe"', "+game opentdm", "+exec srv.cfg", function(err, data) {  
+             console.log(err)
+             console.log(data.toString());
+			 console.log(stdout);
+             });  
+
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -29,20 +36,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         switch(cmd) {
             // !startsrv
             case 'startsrv':
-			    bot.sendMessage({
+		bot.sendMessage({
                     to: channelID,
                     message: 'Starting Q2server'
-                });
-			
-             var runq2 =function(){
-             exec('"D:\games\q2pro-server\q2proded.exe"', "+game opentdm", "+exec srv.cfg", function(err, data) {  
-             console.log(err)
-             console.log(data.toString());
-			 console.log(stdout);
-             });  
-            
-             runq2();
-				};
+       		});
+		runq2();
+	};
             break;
             // Just add any case commands if you want to..
          }
