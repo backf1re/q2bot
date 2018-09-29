@@ -1,0 +1,12 @@
+{
+  "name": "quake2tvbot",
+  "version": "1.0.0",
+  "description": "My Quake 2 TV Bot",
+  "main": "bot.js",
+  "author": "player.backfire",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "node-gyp": "^3.8.0",
+    "winston": "^3.1.0"
+  }
+}
